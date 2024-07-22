@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <Container fluid className={styles.main}>
-      {/* <Navbar bg="light" expand="lg" sticky="top" className="mb-3">
+      <Navbar bg="light" expand="lg" sticky="top" className="mb-3">
         <Navbar.Brand href="#home">RadiTMS Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,7 +22,7 @@ export default function Home() {
             <Nav.Link href="#master-data">Master Data</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Navbar> */}
+      </Navbar>
 
       <Tabs
         id="controlled-tab-example"
