@@ -19,6 +19,7 @@ export default function Home() {
     setValidated(true);
     setError('');
     // Handle login logic here
+    window.location = "/status"
   };
 
   return (
