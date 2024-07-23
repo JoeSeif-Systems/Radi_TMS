@@ -4,13 +4,16 @@ import { Container, Nav, Navbar, Tab, Tabs, Table, Form, Row, Col, Button } from
 import { useState } from 'react';
 import styles from '../status.module.css';
 import WorkshopForm from '../components/WorkshopForm';
+import FuelForm from '../components/FuelForm';
+import StoresForm from '../components/StoresForm';
+import MasterDataForm from '../components/MasterDataForm';
 
 export default function Home() {
   const [key, setKey] = useState('workshop');
 
   return (
     <Container fluid className={styles.main}>
-      <Navbar bg="light" expand="lg" sticky="top" className="mb-3">
+      {/* <Navbar bg="light" expand="lg" sticky="top" className="mb-3">
         <Navbar.Brand href="#home">RadiTMS Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,7 +25,7 @@ export default function Home() {
             <Nav.Link href="#master-data">Master Data</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> */}
 
       <Tabs
         id="controlled-tab-example"
@@ -38,56 +41,20 @@ export default function Home() {
           </Container>
         </Tab>
         <Tab eventKey="fuel" title="Fuel">
-          <Container>
-            <h3>Fuel Consumption</h3>
-            <Form>
-              <Row className="mb-3">
-                <Col>
-                  <Form.Group controlId="formTruckReg">
-                    <Form.Label>Truck Registration</Form.Label>
-                    <Form.Control type="text" placeholder="Enter truck registration" />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group controlId="formTankCapacity">
-                    <Form.Label>Tank Capacity</Form.Label>
-                    <Form.Control type="text" placeholder="Enter tank capacity" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row className="mb-3">
-                <Col>
-                  <Form.Group controlId="formAmountFueled">
-                    <Form.Label>Amount Fueled</Form.Label>
-                    <Form.Control type="text" placeholder="Enter amount fueled" />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group controlId="formComments">
-                    <Form.Label>Comments</Form.Label>
-                    <Form.Control type="text" placeholder="e.g., From Nairobi to Kampala" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Form.Group controlId="formTopUpFuel">
-                <Form.Check type="checkbox" label="Top up fuel?" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
-          </Container>
+          <FuelForm />
         </Tab>
         <Tab eventKey="store" title="Store">
           <Container>
             <h3>Spares In Stock</h3>
             <p>Purchase Order: 20 | Issued: 15 | Trucks Issued: 10 | Reorder Alerts: 5</p>
+            <StoresForm />
           </Container>
         </Tab>
         <Tab eventKey="master-data" title="Master Data">
           <Container>
             <h3>Master Data</h3>
             <p>Details about the master data.</p>
+            <MasterDataForm />
           </Container>
         </Tab>
       </Tabs>
